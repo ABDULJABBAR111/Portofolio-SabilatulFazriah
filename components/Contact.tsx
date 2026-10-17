@@ -8,6 +8,7 @@ import { profile } from "@/lib/data";
 import { useLang } from "@/lib/i18n";
 
 type State = "idle" | "sending" | "ok" | "error";
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
 export default function Contact() {
   const { t } = useLang();
@@ -21,19 +22,31 @@ export default function Contact() {
     e.preventDefault();
     const form = e.currentTarget;
     const d = new FormData(form);
+
+    // Bot: honeypot terisi atau submit terlalu cepat -> pura-pura sukses
+    if (d.get("website") || Date.now() - t0.current < 2500) {
+      setState("ok"); setMsg(f.ok); form.reset();
+      return;
+    }
+    if (!ACCESS_KEY) { setState("error"); setMsg(f.conf); return; }
+
     setState("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          name: d.get("name"), email: d.get("email"), subject: d.get("subject") ?? "",
-          message: d.get("message"), website: d.get("website") ?? "", t: Date.now() - t0.current,
+          access_key: ACCESS_KEY,
+          from_name: "Portofolio Sabilatul Fazriah",
+          subject: `[Portofolio] ${String(d.get("subject") || "").trim() || "Pesan baru"}`,
+          name: String(d.get("name") ?? ""),
+          email: String(d.get("email") ?? ""),
+          message: String(d.get("message") ?? ""),
         }),
       });
       const j = await res.json().catch(() => ({}));
-      if (res.ok && j.ok) { setState("ok"); setMsg(f.ok); form.reset(); }
-      else { setState("error"); setMsg(res.status === 429 ? f.rate : res.status === 503 ? f.conf : f.fail); }
+      if (res.ok && j.success) { setState("ok"); setMsg(f.ok); form.reset(); }
+      else { setState("error"); setMsg(res.status === 429 ? f.rate : f.fail); }
     } catch {
       setState("error"); setMsg(f.net);
     }

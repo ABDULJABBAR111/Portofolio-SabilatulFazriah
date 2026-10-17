@@ -16,7 +16,7 @@ export function middleware(req: NextRequest) {
     `style-src 'self' 'unsafe-inline'`,
     `img-src 'self' data: blob:`,
     `font-src 'self' data:`,
-    `connect-src 'self'${isDev ? " ws: wss:" : ""}`,
+    `connect-src 'self' https://api.web3forms.com${isDev ? " ws: wss:" : ""}`,
     `worker-src 'self' blob:`,
     `media-src 'self'`,
     `object-src 'none'`,
