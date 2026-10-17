@@ -165,10 +165,12 @@ main,.footer{overflow-x:clip}
 .hp{left:auto;top:auto;clip-path:inset(50%);white-space:nowrap}
 
 @media(max-width:960px){
-  .hero{min-height:auto;padding:92px 0 72px}
+  .hero{min-height:auto;padding:100px 0 72px}
   .hero-grid{gap:6px}
   .hero-photo{width:min(250px,62vw)}
-  .pc-frame{margin-top:44px;padding:12px 12px 42px}
+  .pc-frame{margin-top:124px;padding:12px 12px 42px}
+  .pc-person{clip-path:inset(-70% -2% 0 -2%)}
+  .pc-person img{width:84%}
   .pc-person{left:12px;right:12px;top:12px;bottom:42px}
   .hero-name{font-size:clamp(1.7rem,7vw,2.4rem)}
   .hero-role{margin-top:18px;font-size:.98rem}
@@ -185,4 +187,19 @@ main,.footer{overflow-x:clip}
   .mini-polaroid img{height:190px}
   .orbit-chip{min-width:56px;padding:6px 9px}
   .form .btn{width:100%;justify-content:center}
+}
+
+/* ============ FIX iPHONE: konten tidak boleh melebar keluar layar ============ */
+@media(max-width:960px){
+  .about-grid,.edu-grid,.job,.certs,.project .tilt-inner,.contact-grid,.skills,.ed-track{grid-template-columns:minmax(0,1fr)}
+  .tilt,.tilt-inner,.project,.proj-left,.proj-right,.xls,.xls-wrap,.job-text,.contact-grid>*,.about-grid>*{min-width:0;max-width:100%}
+  .project .tilt-inner{padding:20px 16px}
+  .proj-left h3{font-size:clamp(1.55rem,7vw,2.2rem);overflow-wrap:break-word;word-break:normal}
+  .proj-desc{font-size:1rem}
+  .proj-right{align-items:stretch}
+  .proj-right .btn{align-self:stretch;justify-content:center}
+  .xls{padding:12px}
+  .xls-title{font-size:.8rem;padding:10px 8px}
+  .xls-co,.xls-bal{overflow-wrap:break-word}
+  .xls-wrap{-webkit-overflow-scrolling:touch}
 }

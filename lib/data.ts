@@ -5,7 +5,7 @@ export const profile = {
   phone: "089509687991",
   phoneLink: "https://wa.me/6289509687991",
   email: "sabilatulfazriah@gmail.com",
-  linkedin: "https://www.linkedin.com/in/sabilatul-fazriah-11b580323",
+  linkedin: "https://www.linkedin.com/in/sabilatul-fazriah-11b580323/",
   instagram: "https://www.instagram.com/biiels_",
   project: "https://proyek-portofoliobilaa.vercel.app/",
 };

@@ -69,7 +69,7 @@ export default function Contact() {
             <ul className="contact-list">
               {items.map((c) => (
                 <li key={c.title}>
-                  <a href={c.href} target={c.href.startsWith("mailto") ? undefined : "_blank"} rel="noopener noreferrer">
+                  <a href={c.href} target={c.href.startsWith("mailto") ? undefined : "_blank"} rel="noopener">
                     <span className="ci">{c.icon}</span>
                     <span className="ct"><small>{c.title}</small>{c.label}</span>
                   </a>
