@@ -203,3 +203,13 @@ main,.footer{overflow-x:clip}
   .xls-co,.xls-bal{overflow-wrap:break-word}
   .xls-wrap{-webkit-overflow-scrolling:touch}
 }
+
+/* ============ FIX: teks hero tidak tertutup foto & chart tidak menutupi orbit ============ */
+@media(max-width:960px){
+  .hero-photo{margin-bottom:46px}
+  .hero-grid{gap:14px}
+  .eyebrow{position:relative;z-index:3}
+
+  .orbit-wrap{padding-bottom:128px}
+  .orbit-chart{left:calc(50% - 26%);bottom:auto;top:calc(100% + 16px);width:52%}
+}
