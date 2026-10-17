@@ -168,7 +168,7 @@ main,.footer{overflow-x:clip}
   .hero{min-height:auto;padding:100px 0 72px}
   .hero-grid{gap:6px}
   .hero-photo{width:min(250px,62vw)}
-  .pc-frame{margin-top:124px;padding:12px 12px 42px}
+  .pc-frame{margin-top:50px;padding:12px 12px 42px}
   .pc-person{clip-path:inset(-70% -2% 0 -2%)}
   .pc-person img{width:84%}
   .pc-person{left:12px;right:12px;top:12px;bottom:42px}
