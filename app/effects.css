@@ -210,6 +210,23 @@ main,.footer{overflow-x:clip}
   .hero-grid{gap:14px}
   .eyebrow{position:relative;z-index:3}
 
-  .orbit-wrap{padding-bottom:128px}
-  .orbit-chart{left:calc(50% - 26%);bottom:auto;top:calc(100% + 16px);width:52%}
+}
+
+/* ============ CHART DI LUAR ORBIT (web & HP) ============ */
+.orbit-wrap{padding-bottom:128px}
+.orbit-chart{left:calc(50% - 26%);bottom:auto;top:calc(100% + 18px);width:52%}
+
+@media(max-width:960px){
+  /* chart ke tengah-tengah antara orbit dan judul Pendidikan */
+  .orbit-chart{top:calc(100% + 80px)}
+}
+
+/* ============ HP: chip foto tidak menutupi wajah ============ */
+@media(max-width:960px){
+  .chip{padding:6px 10px;border-radius:14px}
+  .chip b{font-size:.88rem}
+  .chip small{font-size:.64rem}
+  .chip-a{left:-8%;top:56%}
+  .chip-b{right:-8%;top:70%}
+  .chip-c{left:-4%;bottom:-6%}
 }
