@@ -230,3 +230,7 @@ main,.footer{overflow-x:clip}
   .chip-b{right:-8%;top:70%}
   .chip-c{left:-4%;bottom:-6%}
 }
+
+/* ============ FOTO KONTAK: lurus, tidak miring ============ */
+.mini-polaroid{transform:none;rotate:0deg}
+.mini-polaroid img{object-position:center top}

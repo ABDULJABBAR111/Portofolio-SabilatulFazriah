@@ -77,7 +77,7 @@ export default function Contact() {
               ))}
             </ul>
             <Tilt max={10} className="mini-polaroid">
-              <Image src="/img/portrait.webp" alt="" width={414} height={768} sizes="200px" />
+              <Image src="/img/portrait-contact.webp" alt="Sabilatul Fazriah" width={600} height={956} sizes="200px" />
             </Tilt>
           </Reveal>
           <Reveal x={40} y={0}>

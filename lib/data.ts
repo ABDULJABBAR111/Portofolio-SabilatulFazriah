@@ -27,8 +27,8 @@ export const expMeta = [
 export const skillMeta = [
   { level: 85, items: ["excel", "word", "ppt"] },
   { level: 82, items: ["sheet", "doc"] },
-  { level: 50, items: ["capcut", "canva"] },
-  { level: 50, items: [] as string[], text: "English" },
+  { level: 75, items: ["capcut", "canva"] },
+  { level: 75, items: [] as string[], text: "English" },
 ];
 
 export const certMeta = [
